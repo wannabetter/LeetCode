@@ -249,3 +249,6 @@ HARD果然名不虚传，这个题刚开始看的时候还是很有感觉的，�
 
 2022/10/13
 今天一直上课都没来得及写，就是找Index和arr[Index]的关系，如果当前的Index!=arr[Index],就在arr[Index:arr[Index]]中找最大的arr[Index],然后继续循环找，直到走到最后都没找到比当前最大还要大的arr[Index]就划分一个块，如果Index==arr[Index]，也单独划分一次，这样O（N）就出来了。
+
+2022/10/14
+今天每日一题是个字符串的子序列变种问题，其实还是有点难度。DP[Index]=DP[Index]+NewCount-Reapet。NewCount实际上就等于DP[Index-1]，Reapet是上一次遇到这个字母的NewCount，一直规划就行了。
