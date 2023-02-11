@@ -489,3 +489,6 @@ for right, p in enumerate(prizePositions):
         ans = max(ans, right - left + 1 + pre[left])
         pre[right + 1] = max(pre[right], right - left + 1)
  精简的代码放在这里。
+
+2023/2/11
+一个简单题，草了没有做出来，因为有个分类讨论的情况，我没有分类出来，只考虑了大部分情况，有极端情况需要判断但是没有找出来。
