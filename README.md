@@ -501,3 +501,6 @@ for right, p in enumerate(prizePositions):
 
 2023/2/16
 简单题，一次AK。
+
+2023/2/17
+今天是一个图类的问他，但是我以为是用的是深度优先，其实就是一个二维数组的前缀和，倒叙遍历最大的dist=min(row,col),遍历坐标(grid.length-dist,grid[0].length-dist),如果有全部都是1的直接返回dist*dist。
