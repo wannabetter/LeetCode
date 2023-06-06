@@ -1,18 +1,20 @@
 from typing import List
+from collections import Counter
 
 
 def equalPairs(grid: List[List[int]]) -> int:
-    Sum = 0
-    Temp = []
-    for I in range(len(grid)):
-        T = [grid[J][I] for J in range(len(grid))]
-        Temp.append(T)
-    for I in range(len(grid)):
-        for J in range(len(grid)):
-            if Temp[J] == grid[I]:
-                Sum += 1
-    return Sum
+    def Arr2Str(arr: List[int]) -> str:
+        chars = "["
+        for x in arr:
+            chars += str(x) + ","
+        return chars + "]"
 
+    cnt = Counter()
+    for arr in grid:
+        cnt[Arr2Str(arr)] += 1
 
-if __name__ == "__main__":
-    print(equalPairs([[3, 2, 1], [1, 7, 6], [2, 7, 7]]))
+    res = 0
+    for index in range(len(grid)):
+        res += cnt[Arr2Str(list(grid[index][x] for x in range(len(grid))))]
+
+    return res
