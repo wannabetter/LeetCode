@@ -1,23 +1,14 @@
 def maximumSwap(num: int) -> int:
-    Nums = list(str(num))
-    MaxNum = num
-
-    def BackTrace(Index=0):
-        nonlocal MaxNum
-        if Index == len(Nums):
-            return
-        for index in range(Index + 1, len(Nums)):
-            Nums[index], Nums[Index] = Nums[Index], Nums[index]
-            Chars = ""
-            for Num in Nums:
-                Chars += Num
-            MaxNum = max(MaxNum, int(Chars))
-            Nums[index], Nums[Index] = Nums[Index], Nums[index]
-        BackTrace(Index + 1)
-
-    BackTrace()
-    return MaxNum
-
-
-if __name__ == '__main__':
-    print(maximumSwap(1993))
+    s = list(str(num))
+    n = len(s)
+    maxIdx = n - 1
+    idx1 = idx2 = -1
+    for i in range(n - 1, -1, -1):
+        if s[i] > s[maxIdx]:
+            maxIdx = i
+        elif s[i] < s[maxIdx]:
+            idx1, idx2 = i, maxIdx
+    if idx1 < 0:
+        return num
+    s[idx1], s[idx2] = s[idx2], s[idx1]
+    return int(''.join(s))
