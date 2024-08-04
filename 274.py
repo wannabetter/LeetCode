@@ -13,3 +13,5 @@ def hIndex(citations: List[int]) -> int:
     if citations[left] == 0:
         return 0
     return left + 1
+
+
