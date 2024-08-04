@@ -1,6 +1,5 @@
 from typing import List
 
-
 def distinctDifferenceArray(nums: List[int]) -> List[int]:
     n = len(nums)
     ans = [0] * n
@@ -9,3 +8,4 @@ def distinctDifferenceArray(nums: List[int]) -> List[int]:
         ans[index] = len(set(nums[:index + 1])) - len(set(nums[index + 1:]))
 
     return ans
+

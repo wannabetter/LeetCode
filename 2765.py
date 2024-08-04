@@ -13,4 +13,3 @@ def alternatingSubarray(nums: List[int]) -> int:
                 break
     return res
 
-        
